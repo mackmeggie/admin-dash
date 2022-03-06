@@ -1,26 +1,222 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1 fr 1fr ;
-    grid-template-rows: repeat(1fr 8);
+    grid-template-rows: repeat(8 1fr);
     grid-template-areas: 
     "sidebar header header header"
     "sidebar header header header"
-    "sidebar main main main"
-    "sidebar main main main"
-    "sidebar main main main"
-    "sidebar main main main"
-    "sidebar main main main"
-    "sidebar main main main";
+    "sidebar main main announce"
+    "sidebar main main announce"
+    "sidebar main main announce"
+    "sidebar main main trend"
+    "sidebar main main trend"
+    "sidebar main main trend";
+    background-color: #393E46;
 }
 
 .header {
     grid-area: header;
+    display: grid;
+    grid-template-rows: 1 fr 1fr;
+    grid-template-areas: 
+    "header1"
+    "header2";
+    background-color: #EEEEEE;
+}
+
+.header1 {
+    grid-area: header1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 15px;
+   
+}
+
+.id {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+.header2 {
+    grid-area: header2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'picture buttons';
+
+}
+
+.picture {
+    grid-area: picture;
+    margin-left: 10px;
+}
+
+
+
+.welcome {
+    grid-area: picture;
+    margin-left: 100px;
+}
+
+img[src*=magnify] {
+    height:26px;
+    margin: 5px;
+}
+
+img[src*=venus] {
+    height:42px;
+    margin: 10px;
+}
+
+.search {
+    height: 30px;
+    width: 600px;
+    background-color: #00ADB5;
+    border-radius: 20px;
+    margin-right: 170px;
 }
 
 .sidebar {
     grid-area: sidebar;
+    padding: 30px;
+    background-color: #00ADB5;
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: grid;
+    grid-template-rows: 1fr 3fr 3fr;
+    grid-template-areas: 
+    "dash"
+    "ul1"
+    "ul2";
+}
+
+.ul1 {
+    grid-area: ul1;
+}
+
+.ul2 {
+    grid-area: ul2;
+}
+
+li {
+    padding: 6px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+#dash {
+    list-style-image: url(dash.svg);
+    font-weight: bold;
+    font-size: 34px;
+}
+
+#home {
+    list-style-image: url(home.svg);
+}
+
+#profile {
+    list-style-image: url(profile.svg);
+}
+
+#message {
+    list-style-image: url(message.svg);
+}
+
+#history {
+    list-style-image: url(history.svg);
+}
+
+#tasks {
+    list-style-image: url(note-edit.svg);
+}
+
+#communities {
+    list-style-image: url(account-group.svg);
+}
+
+#settings {
+    list-style-image: url(cog.svg);
+}
+
+#support {
+    list-style-image: url(help-box.svg);
+}
+
+#privacy {
+    list-style-image: url(lock.svg);
 }
 
 .main {
     grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:auto;
+    grid-gap: 10px;
+    background-color: #393E46;
+
+}
+
+.card {
+    text-align: left;
+    background-color: #EEEEEE;
+    margin: 10px;
+    padding: 10px;
+    border-left: 8px solid #FF9F1C;
+    border-radius: 10px;
+
+}
+
+.announcecard {
+    grid-area: announce;
+    background-color: #EEEEEE;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+#title2 {
+    font-size: 16px;
+}
+
+.trendcard {
+    grid-area: trend;
+    background-color: #EEEEEE;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+p {
+    color: #222831;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#title {
+    font-weight: 900;
+}
+
+button {
+    color: aliceblue;
+    background-color: #00ADB5;
+    border-radius: 20px;
+    border-style: none;
+    font-size: 14px;
+    width: 90px;
+    max-height: 30px;
+    grid-area: buttons; 
+    margin-top: 30px; 
+}
+
+.new {
+    margin-left: 180px;
+}
+
+.upload {
+    margin-left: 280px;
+}
+
+.share {
+    margin-left: 380px;
 }
